@@ -8,11 +8,9 @@ function NoteContainer(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-
     setNote(prevNote => {
       return {
-        ...prevNote,
-        [name]: value
+        ...prevNote, [name]: value
       };
     });
   }
@@ -20,8 +18,7 @@ function NoteContainer(props) {
   function submitNote(event) {
     props.onAdd(note);
     setNote({
-      title: "",
-      content: ""
+      title: "", content: ""
     });
     event.preventDefault();
   }
